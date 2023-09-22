@@ -108,8 +108,14 @@ function App() {
       {modal.show && <Modal onClick={closeModalHandler} title={modal.title} message={modal.message}/>}
       <div className="generator">
         <h2 className="generator__title">Password Generator</h2>
+        <div className='generator__password'>
         <h4 className="password">{password}</h4>
-      
+        <button onClick={copyPasswordHandler} className='copy__btn'>
+              <i className='far fa-clipboard'></i>
+        </button>
+        </div>
+
+
       <form className="generator__form">
         <div className="generator__form-controls">
           <div className="generator__form-control">
@@ -150,7 +156,7 @@ function App() {
           </div>
           <div className="generator__form-actions">
             <button onClick={generatePassword} className="btn generate-btn">Generate Password</button>
-            <button onClick={copyPasswordHandler} className="btn copy-btn">Copy Password</button>
+            {/* <button onClick={copyPasswordHandler} className="btn copy-btn">Copy Password</button> */}
           </div>
         </div>
       </form>
